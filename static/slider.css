@@ -1,0 +1,120 @@
+.carousel-wrapper{
+  height:320px;
+  position:relative;
+  width:640px;
+  margin:0 auto;
+}
+.carousel-item{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:25px 50px;
+  opacity:0;
+  transition: all 0.5s ease-in-out;
+}
+.arrow{
+  border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 20px;
+}
+
+.arrow-prev{
+  left:-30px;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%) rotate(135deg);
+}
+ 
+.arrow-next{
+    right:-30px;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%) rotate(-45deg);
+  }
+
+.light{
+  color:white;
+}
+
+.carousel-item h2{
+  display: block; 
+  padding-top: 55%;
+}
+
+@media only screen and (max-width: 600px) {
+  .carousel-wrapper{
+    justify-content: center;
+    height:30vw;
+    position:relative;
+    width:60vw;
+
+    margin: 0 auto;
+  }
+  .carousel-item{
+    position:absolute;
+    /* width: 200px; */
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:0px 0px;
+    opacity:0;
+    transition: all 0.5s ease-in-out;
+  }
+  .arrow{
+    border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 10px;
+  }
+  .carousel-item h2{
+    display: block; 
+    padding-top: 70%;
+  }
+      .arrow, .light .arrow {
+        background-size: 10px;
+        background-position: 10px 50%;
+      }
+
+    
+    }
+
+
+/*Select every element*/
+[id^="item"] {
+    display: none;
+  }
+
+.item-1 {
+    z-index: 2;
+    opacity: 1;
+  background:url('resources/DCSbanner.png');
+  background-size: cover;
+  }
+
+.item-2{
+  background:url('resources/orcus1.png');
+   background-size:cover;
+}
+.item-3{
+  background:url('resources/orcus2.png');
+   background-size:cover;
+}
+
+
+
+*:target ~ .item-1 {
+    opacity: 0;
+  }
+
+#item-1:target ~ .item-1 {
+    opacity: 1;
+  }
+
+#item-2:target ~ .item-2, #item-3:target ~ .item-3 {
+    z-index: 3;
+    opacity: 1;
+  }
